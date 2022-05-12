@@ -8,6 +8,10 @@
 
 ## 数据分析
 
+### Pandas and NumPy
+
+* [pandas常见问题汇总](./workspace/data_science/pandas/faq.md)
+
 ## Web开发
 
 ## Python Book
