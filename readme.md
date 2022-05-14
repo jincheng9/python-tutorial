@@ -24,7 +24,9 @@
 
 ## Python News
 
+## 环境安装问题
 
+* [git安装和ssh配置](./workspace/env/git.md)
 
 ## 微信公众号
 
