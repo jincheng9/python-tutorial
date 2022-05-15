@@ -8,6 +8,12 @@
 
 ## 数据分析
 
+### Anaconda
+
+* [Lecture 0: Anaconda介绍](./workspace/data_science/anaconda/0_intro.md)
+
+* [Lecture 1: conda命令使用手册](./workspace/data_science/anaconda/1_cmd.md)
+
 ### Pandas and NumPy
 
 * [pandas常见问题汇总](./workspace/data_science/pandas/faq.md)
