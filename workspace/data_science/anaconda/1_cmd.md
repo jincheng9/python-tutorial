@@ -210,11 +210,15 @@ zlib                      1.2.12               h8cc25b3_2
 
 * `conda remove -n myenv scipy`
 
-  移除myenv这个环境下的scipy包
+  移除myenv这个环境下的scipy包。
 
 * `conda remove -n myenv --all`
 
-  移除myenv这个环境
+  移除myenv环境。
+
+* `conda env remove -n myenv`
+
+  移除myenv环境。
 
   
 
