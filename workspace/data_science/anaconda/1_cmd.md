@@ -62,7 +62,46 @@ test_pandas              C:\Users\jczha\Anaconda3\envs\test_pandas
 
 该命令用于创建新的环境。
 
+* `conda create -n env_name python=3.x`  
 
+  创建名为env_name的新环境，新环境的python版本为3.x，`-n`的`n`表示name。
+
+  **注意**：全新环境默认是没有装pandas等数据分析库的，只有ca-certificates到wincertstore等基本库。
+
+```bash
+(test_pandas) C:\Users\jczha>conda create -n test_create python=3.9
+Collecting package metadata (current_repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: C:\Users\jczha\Anaconda3\envs\test_create
+
+  added / updated specs:
+    - python=3.9
+
+
+The following NEW packages will be INSTALLED:
+
+  ca-certificates    pkgs/main/win-64::ca-certificates-2022.4.26-haa95532_0
+  certifi            pkgs/main/win-64::certifi-2021.10.8-py39haa95532_2
+  openssl            pkgs/main/win-64::openssl-1.1.1o-h2bbff1b_0
+  pip                pkgs/main/win-64::pip-21.2.4-py39haa95532_0
+  python             pkgs/main/win-64::python-3.9.12-h6244533_0
+  setuptools         pkgs/main/win-64::setuptools-61.2.0-py39haa95532_0
+  sqlite             pkgs/main/win-64::sqlite-3.38.3-h2bbff1b_0
+  tzdata             pkgs/main/noarch::tzdata-2022a-hda174b7_0
+  vc                 pkgs/main/win-64::vc-14.2-h21ff451_1
+  vs2015_runtime     pkgs/main/win-64::vs2015_runtime-14.27.29016-h5e58377_2
+  wheel              pkgs/main/noarch::wheel-0.37.1-pyhd3eb1b0_0
+  wincertstore       pkgs/main/win-64::wincertstore-0.2-py39haa95532_2
+```
+
+* `conda create --clone exist_env_name -n new_env_name`  
+
+  克隆已有环境exist_env_name到新环境new_env_name，新环境new_env_name的python版本和python库与被clone的环境exist_env_name保持一致。
+
+  
 
 ## conda activate
 
@@ -135,12 +174,51 @@ zlib                      1.2.12               h8cc25b3_2
 
 ## conda install
 
+该命令用于给指定环境安装包。
+
+* `conda install -n myenv scipy`
+
+  给环境myenv安装scipy包。
+
+  
+
 ## conda update
+
+该命令用于给指定环境更新包到最新的兼容版本。
+
+> Updates conda packages to the latest compatible version.
+>
+>     This command accepts a list of package names and updates them to the latest
+>     versions that are compatible with all other packages in the environment.
+>     
+>     Conda attempts to install the newest versions of the requested packages. To
+>     accomplish this, it may update some packages that are already installed, or
+>     install additional packages. To prevent existing packages from updating,
+>     use the --no-update-deps option. This may force conda to install older
+>     versions of the requested packages, and it does not prevent additional
+>     dependency packages from being installed.
+
+* `conda update -n myenv scipy`
+
+  更新环境myenv的scipy包到最新版本。
+
+
 
 ## conda remove
 
+该命令用于删除指定环境的指定包或者所有包，如果使用`--all`移除所有包，那这个环境也被删除了。
 
+* `conda remove -n myenv scipy`
+
+  移除myenv这个环境下的scipy包
+
+* `conda remove -n myenv --all`
+
+  移除myenv这个环境
+
+  
 
 ## References
 
 * conda开源地址：https://github.com/conda/conda
+* https://www.jianshu.com/p/eaee1fadc1e9
