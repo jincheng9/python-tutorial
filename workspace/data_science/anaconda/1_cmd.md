@@ -8,9 +8,25 @@
 
 conda常用命令如下：
 
+## conda -h
+
+该命令是conda命令帮助手册，通过`conda -h`我们可以知晓conda所支持的子命令。
+
+```bash
+(base) C:\Users\jczha>conda -h
+```
+
+conda常用的子命令有env, create, list, install, remove, update, activate, deactivate等。
+
+如果想了解每个子命令怎么使用，可以使用如下命令(以create子命令为例)
+
+```bash
+(base) C:\Users\jczha>conda create -h
+```
+
 ## conda env list
 
-展示当前已有的环境，第一列是环境名称，第二列是环境所在的路径。
+该命令用于展示当前已有的环境。命令执行结果里，第一列是环境名称，第二列是环境所在的路径。
 
 ```bash
 (base) C:\Users\jczha>conda env list
@@ -20,4 +36,24 @@ base                  *  C:\Users\jczha\Anaconda3
 test_no_pandas           C:\Users\jczha\Anaconda3\envs\test_no_pandas
 test_pandas              C:\Users\jczha\Anaconda3\envs\test_pandas
 ```
+
+每次打开Anaconda Prompt的时候，默认会进入到base环境。
+
+`(base) C:\Users\jczha>conda env list`最前面的`(base)`就表示当前处于base环境。
+
+## conda create 
+
+
+
+## conda activate/deactivate
+
+
+
+## conda list
+
+## conda install
+
+## conda update
+
+## conda remove
 
