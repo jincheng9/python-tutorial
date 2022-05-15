@@ -60,18 +60,46 @@ test_pandas              C:\Users\jczha\Anaconda3\envs\test_pandas
 
 ## conda create 
 
+该命令用于创建新的环境。
+
 
 
 ## conda activate
 
 该命令用于切换到新环境。
 
+` conda activate [-h] [--[no-]stack] [env_name_or_prefix]`
+
+一般activate后面跟的是环境名称，示例如下：
+
+```bash
+(base) C:\Users\jczha>conda activate test_no_pandas
+
+(test_no_pandas) C:\Users\jczha>conda activate test_pandas
+
+(test_pandas) C:\Users\jczha>
+```
+
 
 
 
 ## conda deactivate
 
-该命令用于退出当前环境。
+该命令用于退出当前环境到上一级环境，和栈的逻辑一样。
+
+比如我们按照base -> env1 -> env2的顺序切换环境，从base环境切换到env1环境，然后从env1环境切换到env2环境。
+
+那在env2环境下执行`conda deactivate`会退出env2环境，进入env1环境。
+
+接着在env1环境下执行`conda deactivate`会退出env1环境，进入base环境。
+
+在base环境下执行`conda deactivate`会退出base环境，进入到cmd原始环境，
+
+```bash
+(base) C:\Users\jczha>conda deactivate
+
+C:\Users\jczha>
+```
 
 
 
@@ -111,3 +139,8 @@ zlib                      1.2.12               h8cc25b3_2
 
 ## conda remove
 
+
+
+## References
+
+* conda开源地址：https://github.com/conda/conda
