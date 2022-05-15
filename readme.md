@@ -2,6 +2,12 @@
 
 如果发现了本项目里的问题或者想了解本项目里还没涉及到的Python语言技术栈，欢迎提交[issue](https://github.com/jincheng9/python_tutorial/issues/new)。
 
+## 微信公众号
+
+* coding进阶：分享Python语言入门、中级到高级教程
+
+  ![coding进阶](./workspace/img/wechat.png)
+
 ## 基础篇
 
 ## 进阶篇
@@ -37,12 +43,3 @@
 ## 环境安装问题
 
 * [git安装和ssh配置](./workspace/env/git.md)
-
-## 微信公众号
-
-* coding进阶：分享Python语言入门、中级到高级教程
-
-  ![coding进阶](./workspace/img/wechat.png)  
-
-
-
