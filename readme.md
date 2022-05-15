@@ -30,6 +30,10 @@
 
 * [在线Python开发IDE](https://www.online-ide.com/)
 
+## 环境安装问题
+
+* [git安装和ssh配置](./workspace/env/git.md)
+
 ## Python Book
 
 ## Python Blog
@@ -39,7 +43,3 @@
 ## Python Community
 
 ## Python News
-
-## 环境安装问题
-
-* [git安装和ssh配置](./workspace/env/git.md)
