@@ -23,6 +23,7 @@
 ### Pandas and NumPy
 
 * [pandas常见问题汇总](./workspace/data_science/pandas/faq.md)
+* [Lecture 0: Pandas和NumPy介绍](./workspace/data_science/pandas/0_intro.md)
 
 ## Web开发
 
