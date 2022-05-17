@@ -12,6 +12,10 @@
 
 ## 进阶篇
 
+## Python Quiz
+
+## 高性能Python
+
 ## 数据分析
 
 ### Anaconda
@@ -24,6 +28,8 @@
 
 * [pandas常见问题汇总](./workspace/data_science/pandas/faq.md)
 * [Lecture 0: Pandas和NumPy介绍](./workspace/data_science/pandas/0_intro.md)
+
+### 高性能数据处理
 
 ## Web开发
 
