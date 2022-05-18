@@ -45,6 +45,8 @@
 
 ## Python Blog
 
+* [Mike Driscoll](https://www.blog.pythonlibrary.org/)
+
 ## Python Video
 
 ## Python Community
