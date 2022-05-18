@@ -45,7 +45,7 @@
 
 ## Python Blog
 
-* [Mike Driscoll](https://www.blog.pythonlibrary.org/)
+* [Mike Driscoll - Python Instructor](https://www.blog.pythonlibrary.org/)
 
 ## Python Video
 
