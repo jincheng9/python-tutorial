@@ -9,10 +9,10 @@
    * 打开Git Bash，输入命令，一路回车
 
      ```bash
-     ssh-keygen -t -C 
+     ssh-keygen -t rsa -C "comment"
      ```
 
-     -t 表示创建的key的类型(type)，比较常用的是rsa和ed25519
+     -t 表示创建的key的类型(type)，比较常用的是rsa和ed25519，上面示例用的是rsa类型
 
      -C 表示Comment，给公钥末尾加上一些便于记忆的描述
 
