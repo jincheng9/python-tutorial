@@ -54,6 +54,8 @@
 
 ## Python Video
 
+* [Python Tutorial - Mike Driscoll](https://www.youtube.com/c/MouseVsPython)
+
 ## Python Community
 
 ## Python News
