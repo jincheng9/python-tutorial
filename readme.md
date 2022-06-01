@@ -50,7 +50,7 @@
 * [Guido van Rossum - Author of Python](https://gvanrossum.github.io/)
 
 * [Mike Driscoll - Python Instructor](https://www.blog.pythonlibrary.org/)
-* [Matt Harrison - Python Instructor](https://store.metasnake.com/)
+* [Matt Harrison - Python and Data Sciene Trainer](https://store.metasnake.com/)
 
 ## Python Video
 
