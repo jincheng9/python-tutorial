@@ -61,3 +61,5 @@
 ## Python Community
 
 ## Python News
+
+* [Python Official Website](https://www.python.org/blogs/)
