@@ -43,18 +43,19 @@
 
 ## Python Book
 
-
+* [Pandas Workout - by Reuven Lerner](https://www.manning.com/books/pandas-workout?utm_source=lerner&utm_medium=affiliate&utm_campaign=book_lerner2_pandas_8_3_21&a_aid=lerner&a_bid=614f7f29)
 
 ## Python Blog
 
 * [Guido van Rossum - Author of Python](https://gvanrossum.github.io/)
-
 * [Mike Driscoll - Python Instructor](https://www.blog.pythonlibrary.org/)
 * [Matt Harrison - Python and Data Sciene Trainer](https://store.metasnake.com/)
+* [Reuven Lerner - Python Trainer](https://lerner.co.il/blog/)
 
 ## Python Video
 
 * [Python Tutorial - Mike Driscoll](https://www.youtube.com/c/MouseVsPython)
+* [Python Tutorial - Reuven Lerner](https://www.youtube.com/reuvenlerner)
 
 ## Python Community
 
