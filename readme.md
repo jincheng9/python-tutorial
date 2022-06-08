@@ -48,9 +48,9 @@
 ## Python Blog
 
 * [Guido van Rossum - Author of Python](https://gvanrossum.github.io/)
-
 * [Mike Driscoll - Python Instructor](https://www.blog.pythonlibrary.org/)
 * [Matt Harrison - Python Instructor](https://store.metasnake.com/)
+* [Real Python Tutorial](https://realpython.com/)
 
 ## Python Video
 
