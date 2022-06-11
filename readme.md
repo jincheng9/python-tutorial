@@ -64,6 +64,8 @@
 
 ## Python Community
 
+* https://twitter.com/learn_byexample/status/1535480460943319040
+
 ## Python News
 
 * [Python Official Website](https://www.python.org/blogs/)
