@@ -60,6 +60,10 @@
 
 ## Python Video
 
+* [Beginner Python](https://www.youtube.com/watch?v=rfscVS0vtbw)
+* [Intermediate Python](https://www.youtube.com/watch?v=HGOBQPFzWKo)
+* [Free Code Camp](https://www.youtube.com/c/Freecodecamp/playlists)
+
 * [Python Tutorial - Mike Driscoll](https://www.youtube.com/c/MouseVsPython)
 * [Python Tutorial - Reuven Lerner](https://www.youtube.com/reuvenlerner)
 
