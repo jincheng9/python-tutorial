@@ -52,8 +52,8 @@
 ## Python Blog
 
 * [Guido van Rossum - Author of Python](https://gvanrossum.github.io/)
-* [Mike Driscoll - Python Instructor](https://www.blog.pythonlibrary.org/)
 * [Real Python Tutorial](https://realpython.com/)
+* [Mike Driscoll - Python Instructor](https://www.blog.pythonlibrary.org/)
 * [Matt Harrison - Python and Data Sciene Trainer](https://store.metasnake.com/)
 * [Reuven Lerner - Python Trainer](https://lerner.co.il/blog/)
 * [testdriven.io - Python Web Development](https://testdriven.io/blog/)
