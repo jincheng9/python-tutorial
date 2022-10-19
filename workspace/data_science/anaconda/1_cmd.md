@@ -178,9 +178,12 @@ zlib                      1.2.12               h8cc25b3_2
 
 * `conda install -n myenv scipy`
 
-  给环境myenv安装scipy包。
+  给指定环境myenv安装scipy包。
 
-  
+
+* `conda install scipy`
+
+  在当前环境安装scipy。
 
 ## conda update
 
@@ -200,9 +203,11 @@ zlib                      1.2.12               h8cc25b3_2
 
 * `conda update -n myenv scipy`
 
-  更新环境myenv的scipy包到最新版本。
+  更新指定环境myenv的scipy包到最新版本。
 
+* `conda update scipy`
 
+  更新当前环境的scipy包到最新版本。
 
 ## conda remove
 
