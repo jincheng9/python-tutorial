@@ -52,18 +52,24 @@
 ## Python Blog
 
 * [Guido van Rossum - Author of Python](https://gvanrossum.github.io/)
-* [Mike Driscoll - Python Instructor](https://www.blog.pythonlibrary.org/)
 * [Real Python Tutorial](https://realpython.com/)
+* [Mike Driscoll - Python Instructor](https://www.blog.pythonlibrary.org/)
 * [Matt Harrison - Python and Data Sciene Trainer](https://store.metasnake.com/)
 * [Reuven Lerner - Python Trainer](https://lerner.co.il/blog/)
 * [testdriven.io - Python Web Development](https://testdriven.io/blog/)
 
 ## Python Video
 
+* [Beginner Python](https://www.youtube.com/watch?v=rfscVS0vtbw)
+* [Intermediate Python](https://www.youtube.com/watch?v=HGOBQPFzWKo)
+* [Free Code Camp](https://www.youtube.com/c/Freecodecamp/playlists)
+
 * [Python Tutorial - Mike Driscoll](https://www.youtube.com/c/MouseVsPython)
 * [Python Tutorial - Reuven Lerner](https://www.youtube.com/reuvenlerner)
 
 ## Python Community
+
+* https://twitter.com/learn_byexample/status/1535480460943319040
 
 ## Python News
 
