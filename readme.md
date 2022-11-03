@@ -44,6 +44,7 @@
 ## 环境安装问题
 
 * [git安装和ssh配置](./workspace/env/git.md)
+* [安装或者卸载anaconda后，Windows自带的cmd窗口打开会闪退](./workspace/env/conda_win_cmd.md)
 
 ## Python Book
 
