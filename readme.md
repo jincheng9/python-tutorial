@@ -10,6 +10,8 @@
 
 ## 基础篇
 
+* [pip命令手册](./workspace/data_science/python-junior/pip.md)
+
 ## 进阶和原理篇
 
 ## Python Quiz
