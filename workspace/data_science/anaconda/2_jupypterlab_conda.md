@@ -102,6 +102,7 @@ jupyter lab
 ## References
 
 * https://blog.csdn.net/Geoffrey_Zflyee/article/details/111586786
+* https://shixiangwang.github.io/blog/4-jupyter-notebook-conda/
 
 
 
