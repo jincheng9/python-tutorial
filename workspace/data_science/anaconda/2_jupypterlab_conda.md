@@ -62,12 +62,18 @@ jupyter lab
 
 ## 其它常用命令
 
-* 查看有哪些Kernel
+* 查看有哪些kernel
 
   ```bash
   jupyter kernelspec list
   ```
 
+* 移除某个kernel，移除后在Jupyter Lab界面上就不会显示该Kernel了
+
+  ```bash
+  jupyter kernelspec remove quant-dev
+  ```
+  
 * python -m ipykernel install的参数含义
 
   ```bash
