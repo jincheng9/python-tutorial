@@ -12,7 +12,9 @@
      ssh-keygen -t rsa -C "comment"
      ```
 
-     -t 表示创建的key的类型(type)，比较常用的是rsa和ed25519，上面示例用的是rsa类型
+     -t 表示创建的key的类型(type)，比较常用的是rsa和ed25519，上面示例用的是rsa类型。
+
+     * 注意：OpenSSH 8.8开始默认不支持ssh-rsa，具体可以参考文末的参考资料。
 
      -C 表示Comment，给公钥末尾加上一些便于记忆的描述
 
@@ -44,3 +46,7 @@
 5. 下载代码
 
    * 上面的1-4操作完成后，就可以`git clone`代码了。
+
+## References
+
+* https://www.linuxadictos.com/en/openssh-8-8-llega-diciendo-adios-al-soporte-de-ssh-rsa-correcciones-de-errores-y-mas.html
