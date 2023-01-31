@@ -62,9 +62,13 @@ test_pandas              C:\Users\jczha\Anaconda3\envs\test_pandas
 
 该命令用于创建新的环境。
 
+* `conda create -n env_name`
+
+  创建名为env_name的新环境，这个环境里没有python以及任何python的包。`-n`的`n`表示name。
+
 * `conda create -n env_name python=3.x`  
 
-  创建名为env_name的新环境，新环境的python版本为3.x，`-n`的`n`表示name。
+  创建名为env_name的新环境，并且在这个新环境安装版本为3.x的python。
 
   **注意**：全新环境默认是没有装pandas等数据分析库的，只有ca-certificates到wincertstore等基本库。
 

@@ -10,6 +10,8 @@
 
 ## 基础篇
 
+* [pip命令手册](./workspace/data_science/python-junior/pip.md)
+
 ## 进阶和原理篇
 
 ## Python Quiz
@@ -23,6 +25,8 @@
 * [Lecture 0: Anaconda介绍](./workspace/data_science/anaconda/0_intro.md)
 
 * [Lecture 1: conda命令使用手册](./workspace/data_science/anaconda/1_cmd.md)
+
+* [Lecture 2: Jupyter Lab指定Conda环境作为Kernel](./workspace/data_science/anaconda/2_jupypterlab_conda.md)
 
 ### Pandas and NumPy
 
