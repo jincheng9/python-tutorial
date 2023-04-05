@@ -1,7 +1,9 @@
 import os
-import time
 import openai
 openai.api_key = os.getenv("OPENAI_API_KEY")
+
+print(openai.Model.list())
+
 
 messages = []
 while True:
@@ -15,8 +17,8 @@ while True:
 
     chat_response = completion
     answer = chat_response.choices[0].message.content
-    total_tokens = chat_response.usage.total_tokens
+    # total_tokens = chat_response.usage.total_tokens
     print(f'ChatGPT: {answer}')
-    print(f'token number: {total_tokens}')
-    print(chat_response)
+    # print(f'token number: {total_tokens}')
+    # print(chat_response)
     messages.append({"role": "assistant", "content": answer})
