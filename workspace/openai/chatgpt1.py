@@ -2,13 +2,9 @@ import os
 import openai
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
-# print(openai.Model.list())
-
-
-messages = []
 while True:
     content = input("User: ")
-    messages.append({"role": "user", "content": content})
+    messages = [{"role": "user", "content": content}]
     
     completion = openai.ChatCompletion.create(
       model="gpt-3.5-turbo",
@@ -21,4 +17,3 @@ while True:
     print(f'ChatGPT: {answer}')
     # print(f'token number: {total_tokens}')
     # print(chat_response)
-    messages.append({"role": "assistant", "content": answer})
