@@ -191,11 +191,11 @@ zlib                      1.2.12               h8cc25b3_2
 
 * `conda install -c conda-forge pandas`
 
-  -c 指定从哪个channel获取对应的python package
+  -c 指定从哪个channel获取对应的python package。
 
   channel官方说明：https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/channels.html
 
-  可以通过`conda install -h`来查看关于channel的参数说明
+  可以通过`conda install -h`来查看关于channel的参数说明。
 
 ## conda update
 
