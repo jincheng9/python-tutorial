@@ -70,7 +70,7 @@ test_pandas              C:\Users\jczha\Anaconda3\envs\test_pandas
 
   创建名为env_name的新环境，并且在这个新环境安装版本为3.x的python。
 
-  **注意**：全新环境默认是没有装pandas等数据分析库的，只有ca-certificates到wincertstore等基本库。
+  **注意**：全新环境默认是没有装pandas等数据分析库的，只有ca-certificates到wincertstore等基本库，如下所示：
 
 ```bash
 (test_pandas) C:\Users\jczha>conda create -n test_create python=3.9

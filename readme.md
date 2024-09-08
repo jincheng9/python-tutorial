@@ -28,7 +28,7 @@
 
 * [Lecture 2: Jupyter Lab指定Conda环境作为Kernel](./workspace/data_science/anaconda/2_jupypterlab_conda.md)
 
-### Pandas and NumPy
+### Pandas
 
 * [pandas常见问题汇总](./workspace/data_science/pandas/faq.md)
 * [Lecture 0: Pandas和NumPy介绍](./workspace/data_science/pandas/0_intro.md)
