@@ -466,7 +466,7 @@ In [176]: s['e'] = 5
   print(s_new)
   ```
 
-* 使用del删除Series里的元素
+* 使用del删除Series里的元素，会修改原始的Series。
 
 ```bash
 In [181]: s
