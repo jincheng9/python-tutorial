@@ -11,6 +11,7 @@
 ## 基础篇
 
 * [pip命令手册](./workspace/data_science/python-junior/pip.md)
+* [(1)和(1,)的类型一样么](./workspace/data_science/python-junior/tuple.md)
 
 ## 进阶和原理篇
 
@@ -32,6 +33,7 @@
 
 * [pandas常见问题汇总](./workspace/data_science/pandas/faq.md)
 * [Lecture 0: Pandas介绍](./workspace/data_science/pandas/lecture0/readme.md)
+* [Lecture 1: Series数据结构](./workspace/data_science/pandas/lecture1/readme.md)
 
 ### PyArrow
 
