@@ -34,6 +34,7 @@
 * [pandas常见问题汇总](./workspace/data_science/pandas/faq.md)
 * [Lecture 0: Pandas介绍](./workspace/data_science/pandas/lecture0/readme.md)
 * [Lecture 1: Series数据结构](./workspace/data_science/pandas/lecture1/readme.md)
+* [Lecture 1: DataFrame数据结构](./workspace/data_science/pandas/lecture2/readme.md)
 
 ### PyArrow
 
