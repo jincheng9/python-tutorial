@@ -158,6 +158,7 @@ DataFrame创建的时候根据data、index和columns这3个入参的搭配，有
 * data是2d ndarray
 
   ```bash
+  ## 不指定index和column，那index和column都是默认从0开始编号
   In [412]: array = np.array([[1,2,3], [4,5,6]])
   
   In [413]: df = pd.DataFrame(array)
@@ -168,6 +169,7 @@ DataFrame创建的时候根据data、index和columns这3个入参的搭配，有
   0  1  2  3
   1  4  5  6
   
+  ## 指定index
   In [415]: df = pd.DataFrame(array, index=['r1', 'r2'])
   
   In [416]: df
@@ -176,6 +178,7 @@ DataFrame创建的时候根据data、index和columns这3个入参的搭配，有
   r1  1  2  3
   r2  4  5  6
   
+  ## 指定index和column
   In [417]: df = pd.DataFrame(array, index=['r1', 'r2'], columns=['c1', 'c2', 'c3'])
   
   In [418]: df
@@ -190,6 +193,7 @@ DataFrame创建的时候根据data、index和columns这3个入参的搭配，有
 * data是list。
 
   ```bash
+  ## 类似2d ndarray，可以按需指定index和column
   In [419]: l = [[1, 2, 3], [4, 5, 6]]
   
   In [420]: df = pd.DataFrame(l, index=['r1', 'r2'], columns=['c1', 'c2', 'c3'])
@@ -259,6 +263,38 @@ DataFrame创建的时候根据data、index和columns这3个入参的搭配，有
   
 
 * data是dict
+
+  ```bash
+  In [453]: df = pd.DataFrame({'col1':[1, 2], 'col2': [3, 4]}, index=['r1', 'r2'])
+  
+  In [454]: df
+  Out[454]: 
+      col1  col2
+  r1     1     3
+  r2     2     4
+  
+  ## 如果指定了columns参数，会从dict里选出匹配columns参数的列，其它列不会出现在
+  ## DataFrame里
+  
+  In [455]: df = pd.DataFrame({'col1':[1, 2], 'col2': [3, 4]}, index=['r1', 'r2'], columns=['col1'])
+  
+  In [456]: df
+  Out[456]: 
+      col1
+  r1     1
+  r2     2
+  
+  ## 如果columns里的某个列名匹配不到dict里的key，那DataFrame里该列的值都是NaN
+  In [457]: df = pd.DataFrame({'col1':[1, 2], 'col2': [3, 4]}, index=['r1', 'r2'], columns=['col1', 'col3'])
+  
+  In [458]: df
+  Out[458]: 
+      col1 col3
+  r1     1  NaN
+  r2     2  NaN
+  ```
+
+  
 
 * data是Series
 
