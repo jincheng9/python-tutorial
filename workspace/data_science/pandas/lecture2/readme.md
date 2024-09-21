@@ -296,9 +296,85 @@ DataFrame创建的时候根据data、index和columns这3个入参的搭配，有
 
   
 
-* data是Series
+* data是Series。
+
+  ```bash
+  ## Series直接作为data传参，生成的DataFrame就只有Series这一列
+  In [462]: s = pd.Series([1,2])
+  
+  In [463]: df = pd.DataFrame(s)
+  
+  In [464]: df
+  Out[464]: 
+     0
+  0  1
+  1  2
+  
+  ## Series指定了index
+  In [465]: s = pd.Series([1,2], index=['r1', 'r2'])
+  
+  In [466]: df = pd.DataFrame(s)
+  
+  In [467]: df
+  Out[467]: 
+      0
+  r1  1
+  r2  2
+  
+  ## 指定列名
+  In [468]: df = pd.DataFrame(s, columns=['col'])
+  
+  In [469]: df
+  Out[469]: 
+      col
+  r1    1
+  r2    2
+  
+  ## 如果Series里的index和pd.DataFrame传参的index不匹配
+  ## 生成的DataFrame会以pd.DataFrame传参的index作为DataFrame的index
+  ## 根据pd.DataFrame的index参数去找Series里对应index的值，找不到的话值就是NaN
+  In [474]: df = pd.DataFrame(s, index=['a', 'b'], columns=['col'])
+  
+  In [475]: df
+  Out[475]: 
+     col
+  a  NaN
+  b  NaN
+  
+  In [481]: s = pd.Series([1,2], index=['r1', 'r2'])
+  
+  In [482]: df = pd.DataFrame(s, index=['r1', 'r3'], columns=['col'])
+  
+  In [483]: df
+  Out[483]: 
+      col
+  r1  1.0
+  r3  NaN
+  ```
+
+  
 
 * data是DataFrame
+
+  ```bash
+  In [485]: df = pd.DataFrame({'A':[1,2], 'B': [3, 4]}, index=['r1', 'r2'])
+  
+  In [486]: df
+  Out[486]: 
+      A  B
+  r1  1  3
+  r2  2  4
+  
+  In [487]: df1 = pd.DataFrame(df)
+  
+  In [488]: df1
+  Out[488]: 
+      A  B
+  r1  1  3
+  r2  2  4
+  ```
+
+  
 
 ## DataFrame访问
 
