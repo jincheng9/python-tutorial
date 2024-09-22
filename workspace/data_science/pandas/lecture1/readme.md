@@ -602,7 +602,8 @@ dtype: int64
   dtype: int64
   ```
 
-  
+
+**注：**iloc的i代表 "integer"，意味着 "integer-location based"。这表示`iloc`用于基于整数位置（从 0 开始的索引）的索引，让你可以通过整数的位置来访问Series或DataFrame中的数据。这种索引方式与Python及其使用整数作为索引的数据结构（例如列表）保持一致，对数据进行位置上的直接选择。
 
 ## References
 
