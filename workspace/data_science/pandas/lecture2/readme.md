@@ -378,7 +378,85 @@ DataFrame创建的时候根据data、index和columns这3个入参的搭配，有
 
 ## DataFrame访问
 
+###  访问指定列 
 
+* 列标签(column label)访问
+
+  ```bash
+  In [505]: df = pd.DataFrame({'A':[1,2], 'B': [3, 4]}, index=['r1', 'r2'])
+  
+  In [506]: df
+  Out[506]: 
+      A  B
+  r1  1  3
+  r2  2  4
+  
+  ## 访问某一列
+  In [507]: df['A']
+  Out[507]: 
+  r1    1
+  r2    2
+  Name: A, dtype: int64
+  
+  ## 访问多列，要传一个list
+  In [510]: df[['A', 'B']]
+  Out[510]: 
+      A  B
+  r1  1  3
+  r2  2  4
+  ```
+
+* 通过列名直接访问：列名不能带有空格或者特殊字符
+
+  ```bash
+  In [513]: df = pd.DataFrame({'A':[1,2], 'B': [3, 4]}, index=['r1', 'r2'])
+  
+  ## 通过列名A直接访问A列
+  In [514]: df.A
+  Out[514]: 
+  r1    1
+  r2    2
+  Name: A, dtype: int64
+  
+  ## 通过列名A直接访问A列
+  In [515]: df.B
+  Out[515]: 
+  r1    3
+  r2    4
+  Name: B, dtype: int64 
+  ```
+
+* 通过get()方法
+
+  ```bash
+  In [513]: df = pd.DataFrame({'A':[1,2], 'B': [3, 4]}, index=['r1', 'r2'])
+  
+  In [516]: df.get('A')
+  Out[516]: 
+  r1    1
+  r2    2
+  Name: A, dtype: int64
+  
+  In [517]: df.get('B')
+  Out[517]: 
+  r1    3
+  r2    4
+  Name: B, dtype: int64
+  
+  ## 访问不存在的列，得到的值是None
+  In [521]: res = df.get('C')
+  
+  In [522]: res
+  
+  In [523]: print(res)
+  None
+  ```
+
+### 访问行
+
+
+
+### 条件选择
 
 ## DataFrame修改
 
