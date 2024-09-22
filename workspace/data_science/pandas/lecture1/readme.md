@@ -578,6 +578,44 @@ d    4
 dtype: int64
 ```
 
+### 修改元素
+
+```bash
+In [615]: s = pd.Series([1,2], index=['r1', 'r2'])
+
+In [616]: s
+Out[616]: 
+r1    1
+r2    2
+dtype: int64
+
+In [617]: s['r1'] = 10
+
+In [618]: s
+Out[618]: 
+r1    10
+r2     2
+dtype: int64
+
+In [619]: s.loc['r1'] = 20
+
+In [620]: s
+Out[620]: 
+r1    20
+r2     2
+dtype: int64
+
+In [621]: s.iloc[0] = 30
+
+In [622]: s
+Out[622]: 
+r1    30
+r2     2
+dtype: int64
+```
+
+
+
 ## Series索引
 
 * Series有自己的索引，可以通过索引来访问Series里的元素。

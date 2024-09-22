@@ -457,31 +457,369 @@ DataFrame创建的时候根据data、index和columns这3个入参的搭配，有
 * loc访问：通过标签来访问
 
   ```bash
+  In [538]: df = pd.DataFrame({'A':[1,2], 'B': [3, 4]}, index=['r1', 'r2'])
+  
+  ## 访问r1这行
+  In [539]: s = df.loc['r1']
+  
+  In [540]: s
+  Out[540]: 
+  A    1
+  B    3
+  Name: r1, dtype: int64
+  
+  ## 每一行也是一个Series对象
+  In [541]: type(s)
+  Out[541]: pandas.core.series.Series
+  
+  
+  ## 获取多行
+  In [543]: df1 = df.loc[['r1', 'r2']]
+  
+  In [544]: df1
+  Out[544]: 
+      A  B
+  r1  1  3
+  r2  2  4
+  
+  ## 行切片后获取指定列
+  In [553]: s1 = df.loc['r2':'r3', 'A']
+  
+  ## s1是一个Series对象
+  In [554]: s1
+  Out[554]: 
+  r2    2
+  r3    3
+  Name: A, dtype: int64
+  
+  ## 切片获取多行多列
+  In [556]: df = pd.DataFrame({'A':[1,2, 3], 'B': [3, 4, 5], 'C':[6,7,8]}, index=['r1', 'r2', 'r3'])
+  
+  In [557]: df2 = df.loc['r2':'r3', 'B':'C']
+  
+  In [558]: df2
+  Out[558]: 
+      B  C
+  r2  4  7
+  r3  5  8
+  
+  ## 也可以指定固定的某几行和某几列
+  In [559]: df3 = df.loc[['r2','r3'], ['B','C']]
+  
+  In [560]: df3
+  Out[560]: 
+      B  C
+  r2  4  7
+  r3  5  8
+  
+  ## 如果行和列都是list传参，那返回的也是一个DataFrame
+  In [561]: df3 = df.loc[['r3'], ['C']]
+  
+  In [562]: df3
+  Out[562]: 
+      C
+  r3  8
+  
+  ## 如果行和列都不是list类型传参，都只有一个值，那返回的是scalar
+  ## 这种方式可以获取二维表格里的某个单元格的值
+  In [563]: v = df.loc['r3', 'C']
+  
+  In [564]: v
+  Out[564]: 8
+  
+  In [565]: type(v)
+  Out[565]: numpy.int64
+  
+  In [566]: type(df3)
+  Out[566]: pandas.core.frame.DataFrame
+  
+  ## 如果行和列中，只有行或者只有列是list类型传参，那返回的是Series
+  In [567]: df3 = df.loc[['r3'], 'C']
+  
+  In [568]: df3
+  Out[568]: 
+  r3    8
+  Name: C, dtype: int64
+  
+  In [569]: type(df3)
+  Out[569]: pandas.core.series.Series
+  
+  In [570]: df3 = df.loc['r3', ['B', 'C']]
+  
+  In [571]: df3
+  Out[571]: 
+  B    5
+  C    8
+  Name: r3, dtype: int64
+  
+  In [572]: type(df3)
+  Out[572]: pandas.core.series.Series
   ```
 
   
 
-* iloc访问：通过位置来访问
+* iloc访问：通过位置来访问。iloc表示integer-location based，基于位置来访问。
 
-* at：通过标签来访问
+  ```bash
+  In [574]: df = pd.DataFrame({'A':[1,2, 3], 'B': [3, 4, 5], 'C':[6,7,8]}, index=['r1', 'r2', 'r3'])
+  
+  ## 访问第一行
+  In [575]: df.iloc[0]
+  Out[575]: 
+  A    1
+  B    3
+  C    6
+  Name: r1, dtype: int64
+  
+  ## 访问第一行和第二行
+  In [576]: df.iloc[[0,1]]
+  Out[576]: 
+      A  B  C
+  r1  1  3  6
+  r2  2  4  7
+  
+  ## 访问第一行和第二行，切片形式
+  In [578]: df.iloc[0:2]
+  Out[578]: 
+      A  B  C
+  r1  1  3  6
+  r2  2  4  7
+  
+  ## 访问第一行和第二行，第一列和第二列
+  In [580]: df.iloc[[0,1], [0,1]]
+  Out[580]: 
+      A  B
+  r1  1  3
+  r2  2  4
+  
+  ## 访问第一行和第二行，第二列和第三列
+  In [581]: df.iloc[0:2, 1:3]
+  Out[581]: 
+      B  C
+  r1  3  6
+  r2  4  7
+  
+  ## 访问第1行和第二列，得到的是一个scalar
+  In [582]: df.iloc[0, 1]
+  Out[582]: 3
+  ```
 
-* iat：通过位置来访问
+  
+
+* at：用法同loc，通过标签来访问，但只能访问某个单元格的标量值，不能访问整行或者整列，否则会报错。
+
+  ```bash
+  In [589]: df = pd.DataFrame({'A':[1,2, 3], 'B': [3, 4, 5], 'C':[6,7,8]}, index=['r1', 'r2', 'r3'])
+  
+  In [590]: df.at['r1', 'C']
+  Out[590]: 6
+  ```
+
+  
+
+* iat：用法同iloc，通过位置来访问，但只能获取到某个单元格的标量值，不能访问整行或者整列，否则会报错。
+
+  ```bash
+  In [592]: df = pd.DataFrame({'A':[1,2, 3], 'B': [3, 4, 5], 'C':[6,7,8]}, index=['r1', 'r2', 'r3'])
+  
+  In [593]: df.iat[0,2]
+  Out[593]: 6
+  ```
+
+  
 
 ### 条件选择
 
+* 布尔索引
 
+  ```bash
+  In [604]: df = pd.DataFrame({'A':[1,2, 3], 'B': [3, 4, 5], 'C':[6,7,8]}, index=['r1', 'r2', 'r3'])
+  
+  In [605]: df[df['A']> 1]
+  Out[605]: 
+      A  B  C
+  r2  2  4  7
+  r3  3  5  8
+  
+  ## 支持多个条件选择
+  In [606]: df[(df['A']> 1) & (df['B']<5)]
+  Out[606]: 
+      A  B  C
+  r2  2  4  7
+  
+  ## 支持isin()筛选
+  In [607]: df[df['A'].isin([1, 3])]
+  Out[607]: 
+      A  B  C
+  r1  1  3  6
+  r3  3  5  8
+  ```
+
+* 通过query方法：使用查询字符串来选择数据。
+
+  ```bash
+  In [608]: df.query('(A>1) & (B<5)')
+  Out[608]: 
+      A  B  C
+  r2  2  4  7
+  ```
+
+* 条件筛选后，访问列
+
+  ```bash
+  In [610]: df.loc[(df['A']> 1) & (df['B']<5), 'B']
+  Out[610]: 
+  r2    4
+  Name: B, dtype: int64
+  
+  ## 注意里的指定要在df.loc()方法后面
+  # df.loc[(df['A']> 1) & (df['B']<5), 'B'] 会报错
+  In [611]: df.loc[(df['A']> 1) & (df['B']<5)]['B']
+  Out[611]: 
+  r2    4
+  Name: B, dtype: int64
+  
+  In [612]: df.query('(A>1) & (B<5)')['B']
+  Out[612]: 
+  r2    4
+  Name: B, dtype: int64
+  ```
+
+  
 
 ## DataFrame修改
 
+### 新增列
+
+```bash
+In [623]: df = pd.DataFrame({'A':[1,2, 3], 'B': [3, 4, 5], 'C':[6,7,8]}, index=['r1', 'r2', 'r3'])
+
+In [624]: df
+Out[624]: 
+    A  B  C
+r1  1  3  6
+r2  2  4  7
+r3  3  5  8
+
+## 新增D列
+In [625]: df['D'] = df['A'] * 2
+
+In [626]: df
+Out[626]: 
+    A  B  C  D
+r1  1  3  6  2
+r2  2  4  7  4
+r3  3  5  8  6
+
+### 新增E列
+In [627]: df ['E'] = [9, 10, 11]
+
+In [628]: df
+Out[628]: 
+    A  B  C  D   E
+r1  1  3  6  2   9
+r2  2  4  7  4  10
+r3  3  5  8  6  11
+```
 
 
-## DataFrame删除
+
+### 修改列
+
+```bash
+In [629]: df = pd.DataFrame({'A':[1,2, 3], 'B': [3, 4, 5], 'C':[6,7,8]}, index=['r1', 'r2', 'r3'])
+
+In [630]: df
+Out[630]: 
+    A  B  C
+r1  1  3  6
+r2  2  4  7
+r3  3  5  8
+
+## 修改A列
+In [631]: df['A'] = df['A'] * 2
+
+In [632]: df
+Out[632]: 
+    A  B  C
+r1  2  3  6
+r2  4  4  7
+r3  6  5  8
+
+## 修改B列
+In [633]: df['B'] = [9, 10, 11]
+
+In [634]: df
+Out[634]: 
+    A   B  C
+r1  2   9  6
+r2  4  10  7
+r3  6  11  8
+```
 
 
 
-## DataFrame索引
+### 删除列
+
+* drop方法：调用时不就地修改DataFrame，而是返回一个新的DataFrame副本（除非指定 `inplace=True`）。
+
+```bash
+In [635]: df = pd.DataFrame({'A':[1,2, 3], 'B': [3, 4, 5], 'C':[6,7,8]}, index=['r1', 'r2', 'r3'])
+
+In [636]: df
+Out[636]: 
+    A  B  C
+r1  1  3  6
+r2  2  4  7
+r3  3  5  8
+
+## 删掉C列后的DataFrame
+In [637]: df.drop('C', axis=1)
+Out[637]: 
+    A  B
+r1  1  3
+r2  2  4
+r3  3  5
+
+## df本身没有被修改，因为drop默认不会就地修改
+In [638]: df
+Out[638]: 
+    A  B  C
+r1  1  3  6
+r2  2  4  7
+r3  3  5  8
+
+## 要让原来的DataFrame本身被修改，可以drop后重新赋值
+## 或者使用inplace=True参数
+In [639]: df = df.drop('C', axis=1)
+
+In [640]: df
+Out[640]: 
+    A  B
+r1  1  3
+r2  2  4
+r3  3  5
+
+## inplace=True，就地修改原来的DataFrame 
+In [643]: df.drop('B', axis=1, inplace=True)
+
+In [644]: df
+Out[644]: 
+    A
+r1  1
+r2  2
+r3  3
+```
 
 
+
+## DataFrame容易混淆的术语
+
+* index：索引，对应的是创建DataFrame的index参数。
+* label：标签。分为行标签(row label)和列标签(column label)。
+  * 行标签对应的是index。
+  * DataFrame的列标签对应的是创建DataFrame的columns参数。
+* https://pandas.pydata.org/docs/reference/frame.html，这个页面查看DataFame.index和DataFrame.columns就可以看到官方说明。
 
 ## References
 
