@@ -532,6 +532,7 @@ In [176]: s['e'] = 5
   d    4
   dtype: int64
   
+  ## drop()方法默认返回一个新的对象，不会修改原对象的值
   In [234]: s_new = s.drop(['a', 'c'])
   
   In [235]: s_new
@@ -546,6 +547,22 @@ In [176]: s['e'] = 5
   b    2
   c    3
   d    4
+  dtype: int64
+  
+  ## 就地删除Series的元素
+  In [658]: s = pd.Series([1,2], index=['r1', 'r2'])
+  
+  In [659]: s
+  Out[659]: 
+  r1    1
+  r2    2
+  dtype: int64
+  
+  In [660]: s.drop('r1', inplace=True)
+  
+  In [661]: s
+  Out[661]: 
+  r2    2
   dtype: int64
   ```
 

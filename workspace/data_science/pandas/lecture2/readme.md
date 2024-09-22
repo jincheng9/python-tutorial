@@ -763,55 +763,92 @@ r3  6  11  8
 
 * drop方法：调用时不就地修改DataFrame，而是返回一个新的DataFrame副本（除非指定 `inplace=True`）。
 
-```bash
-In [635]: df = pd.DataFrame({'A':[1,2, 3], 'B': [3, 4, 5], 'C':[6,7,8]}, index=['r1', 'r2', 'r3'])
+  ```bash
+  In [635]: df = pd.DataFrame({'A':[1,2, 3], 'B': [3, 4, 5], 'C':[6,7,8]}, index=['r1', 'r2', 'r3'])
+  
+  In [636]: df
+  Out[636]: 
+      A  B  C
+  r1  1  3  6
+  r2  2  4  7
+  r3  3  5  8
+  
+  ## 删掉C列后的DataFrame
+  In [637]: df.drop('C', axis=1)
+  Out[637]: 
+      A  B
+  r1  1  3
+  r2  2  4
+  r3  3  5
+  
+  ## df本身没有被修改，因为drop默认不会就地修改
+  In [638]: df
+  Out[638]: 
+      A  B  C
+  r1  1  3  6
+  r2  2  4  7
+  r3  3  5  8
+  
+  ## 要让原来的DataFrame本身被修改，可以drop后重新赋值
+  ## 或者使用inplace=True参数
+  In [639]: df = df.drop('C', axis=1)
+  
+  In [640]: df
+  Out[640]: 
+      A  B
+  r1  1  3
+  r2  2  4
+  r3  3  5
+  
+  ## inplace=True，就地修改原来的DataFrame 
+  In [643]: df.drop('B', axis=1, inplace=True)
+  
+  In [644]: df
+  Out[644]: 
+      A
+  r1  1
+  r2  2
+  r3  3
+  
+  ## 删除多列，drop第一个参指定要删的列
+  In [649]: df = pd.DataFrame({'A':[1,2, 3], 'B': [3, 4, 5], 'C':[6,7,8]}, index=['r1', 'r2', 'r3'])
+  
+  In [650]: df.drop(['A', 'B'], axis=1, inplace=True)
+  
+  In [651]: df
+  Out[651]: 
+      C
+  r1  6
+  r2  7
+  r3  8
+  ```
 
-In [636]: df
-Out[636]: 
-    A  B  C
-r1  1  3  6
-r2  2  4  7
-r3  3  5  8
+  
 
-## 删掉C列后的DataFrame
-In [637]: df.drop('C', axis=1)
-Out[637]: 
-    A  B
-r1  1  3
-r2  2  4
-r3  3  5
+* del关键字：使用 `del` 关键字则是直接就地删除列，不返回任何值。
 
-## df本身没有被修改，因为drop默认不会就地修改
-In [638]: df
-Out[638]: 
-    A  B  C
-r1  1  3  6
-r2  2  4  7
-r3  3  5  8
+  ```bash
+  In [645]: df = pd.DataFrame({'A':[1,2, 3], 'B': [3, 4, 5], 'C':[6,7,8]}, index=['r1', 'r2', 'r3'])
+  
+  In [646]: df
+  Out[646]: 
+      A  B  C
+  r1  1  3  6
+  r2  2  4  7
+  r3  3  5  8
+  
+  ## 删除C列，DataFrame被原地修改
+  In [647]: del df['C']
+  
+  In [648]: df
+  Out[648]: 
+      A  B
+  r1  1  3
+  r2  2  4
+  r3  3  5
+  ```
 
-## 要让原来的DataFrame本身被修改，可以drop后重新赋值
-## 或者使用inplace=True参数
-In [639]: df = df.drop('C', axis=1)
-
-In [640]: df
-Out[640]: 
-    A  B
-r1  1  3
-r2  2  4
-r3  3  5
-
-## inplace=True，就地修改原来的DataFrame 
-In [643]: df.drop('B', axis=1, inplace=True)
-
-In [644]: df
-Out[644]: 
-    A
-r1  1
-r2  2
-r3  3
-```
-
-
+  
 
 ## DataFrame容易混淆的术语
 
