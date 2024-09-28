@@ -653,6 +653,26 @@ DataFrame创建的时候根据data、index和columns这3个入参的搭配，有
       A  B  C
   r1  1  3  6
   r3  3  5  8
+  
+  ## 筛选某列值为NaN的数据，使用isna()或者isnull()方法
+  In [666]: df = pd.DataFrame({'A':[1,2, 3], 'B': [3, 4, 5], 'C':[6,7, np.nan]}, index=['r1', 'r2', 'r3'])
+  
+  In [667]: df
+  Out[667]: 
+      A  B    C
+  r1  1  3  6.0
+  r2  2  4  7.0
+  r3  3  5  NaN
+  
+  In [668]: df[df['C'].isna()]
+  Out[668]: 
+      A  B   C
+  r3  3  5 NaN
+  
+  In [669]: df[df['C'].isnull()]
+  Out[669]: 
+      A  B   C
+  r3  3  5 NaN
   ```
 
 * 通过query方法：使用查询字符串来选择数据。
