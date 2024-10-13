@@ -876,7 +876,7 @@ r3  6  11  8
 * label：标签。分为行标签(row label)和列标签(column label)。
   * 行标签对应的是index。
   * DataFrame的列标签对应的是创建DataFrame的columns参数。
-* https://pandas.pydata.org/docs/reference/frame.html，这个页面查看DataFame.index和DataFrame.columns就可以看到官方说明。
+* https://pandas.pydata.org/docs/reference/frame.html，这个地址查看DataFame.index和DataFrame.columns就可以看到官方说明。
 
 ## References
 
